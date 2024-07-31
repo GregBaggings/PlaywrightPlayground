@@ -9,6 +9,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
 import pages.*;
 import testdata.JsonArgumentsProvider;
+import testdata.TestData;
+import util.TestCaseKeys;
 
 import java.util.Map;
 
@@ -34,8 +36,9 @@ public class CheckoutWithDataFromFileExampleTest extends BaseTest {
     @DisplayName("Checkout flow with different users")
     @ParameterizedTest(name = "Checkout with user: {0}")
     @ArgumentsSource(JsonArgumentsProvider.class)
-    public void checkoutTest(String username, String password) {
-        loginPage.login(username, password);
+    @TestCaseKeys({"visualUser", "performanceGlitchUser"})
+    public void checkoutTest(TestData data) {
+        loginPage.login(data.getUsername(), data.getPassword());
         productListPage.selectProduct();
         productListPage.openShoppingCart();
         yourCartPage.goToCheckout();
