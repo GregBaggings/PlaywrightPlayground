@@ -2,13 +2,11 @@ package poc.checkout;
 
 import base.BaseTest;
 import com.microsoft.playwright.junit.UsePlaywright;
-import factory.PlaywrightFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ArgumentsSource;
-import org.junit.jupiter.params.provider.CsvSource;
 import pages.*;
 import testdata.JsonArgumentsProvider;
 
@@ -18,7 +16,7 @@ import static constants.Constants.*;
 import static util.TestDataHandler.prepareTestData;
 
 @UsePlaywright
-public class Checkout2Test extends BaseTest {
+public class CheckoutWithDataFromFileExampleTest extends BaseTest {
 
     private Map<String, String> testData;
 

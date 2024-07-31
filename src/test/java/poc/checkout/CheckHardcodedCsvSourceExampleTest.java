@@ -13,7 +13,7 @@ import static constants.Constants.*;
 import static util.TestDataHandler.prepareTestData;
 
 @UsePlaywright
-public class DemoTest extends BaseTest {
+public class CheckHardcodedCsvSourceExampleTest extends BaseTest {
 
     private Map<String, String> testData;
 
