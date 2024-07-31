@@ -2,6 +2,7 @@ package pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import factory.PlaywrightFactory;
 import io.qameta.allure.Step;
 
 import static org.junit.jupiter.api.Assertions.fail;
@@ -11,7 +12,8 @@ public class YourCartPage {
     private final Locator selectedProductList;
     private final Locator checkoutButton;
 
-    public YourCartPage(Page page) {
+    public YourCartPage() {
+        Page page = PlaywrightFactory.getPage();
         this.selectedProductList = page.locator(".cart_item");
         this.checkoutButton = page.locator("#checkout");
     }

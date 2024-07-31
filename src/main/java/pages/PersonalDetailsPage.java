@@ -2,6 +2,7 @@ package pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import factory.PlaywrightFactory;
 import io.qameta.allure.Step;
 
 public class PersonalDetailsPage {
@@ -11,7 +12,8 @@ public class PersonalDetailsPage {
     private final Locator zipPostalInput;
     private final Locator continueButton;
 
-    public PersonalDetailsPage(Page page) {
+    public PersonalDetailsPage() {
+        Page page = PlaywrightFactory.getPage();
         this.firstNameInput = page.locator("#first-name");
         this.lastNameInput = page.locator("#last-name");
         this.zipPostalInput = page.locator("#postal-code");

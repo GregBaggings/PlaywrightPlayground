@@ -25,21 +25,19 @@ public class DemoTest extends BaseTest {
 
     @BeforeEach
     public void setTestData() {
-        testData = prepareTestData(page);
+        testData = prepareTestData();
 
-        loginPage = new LoginPage(page);
-        productListPage = new ProductListPage(page);
-        yourCartPage = new YourCartPage(page);
-        personalDetailsPage = new PersonalDetailsPage(page);
-        feedbackPage = new FeedbackPage(page);
+        loginPage = new LoginPage();
+        productListPage = new ProductListPage();
+        yourCartPage = new YourCartPage();
+        personalDetailsPage = new PersonalDetailsPage();
+        feedbackPage = new FeedbackPage();
     }
 
     @DisplayName("Checkout flow with different users")
     @ParameterizedTest(name = "Checkout with user: {0}")
     @CsvSource({"standard_user,secret_sauce"})
     public void checkoutTest(String username, String password) {
-        page.navigate(SUT_URL);
-
         loginPage.login(username, password);
         productListPage.selectProduct();
         productListPage.openShoppingCart();

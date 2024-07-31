@@ -2,12 +2,15 @@ package poc.checkout;
 
 import base.BaseTest;
 import com.microsoft.playwright.junit.UsePlaywright;
+import factory.PlaywrightFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import pages.*;
+import testdata.JsonArgumentsProvider;
 
 import java.util.Map;
 
@@ -27,23 +30,19 @@ public class Checkout2Test extends BaseTest {
 
     @BeforeEach
     public void setTestData() {
-        testData = prepareTestData(page);
+        testData = prepareTestData();
 
-        loginPage = new LoginPage(page);
-        productListPage = new ProductListPage(page);
-        yourCartPage = new YourCartPage(page);
-        personalDetailsPage = new PersonalDetailsPage(page);
-        feedbackPage = new FeedbackPage(page);
+        loginPage = new LoginPage();
+        productListPage = new ProductListPage();
+        yourCartPage = new YourCartPage();
+        personalDetailsPage = new PersonalDetailsPage();
+        feedbackPage = new FeedbackPage();
     }
 
     @DisplayName("Checkout flow with different users")
     @ParameterizedTest(name = "Checkout with user: {0}")
-    @CsvSource({
-            "visual_user,secret_sauce",
-            "performance_glitch_user,secret_sauce"})
+    @ArgumentsSource(JsonArgumentsProvider.class)
     public void checkoutTest(String username, String password) {
-        page.navigate(SUT_URL);
-
         loginPage.login(username, password);
         productListPage.selectProduct();
         productListPage.openShoppingCart();

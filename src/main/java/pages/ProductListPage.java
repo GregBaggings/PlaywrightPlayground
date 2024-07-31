@@ -2,6 +2,7 @@ package pages;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import factory.PlaywrightFactory;
 import io.qameta.allure.Step;
 
 public class ProductListPage {
@@ -10,7 +11,8 @@ public class ProductListPage {
     private final Locator shoppingCartButton;
     private final Locator finishCheckoutButton;
 
-    public ProductListPage(Page page) {
+    public ProductListPage() {
+        Page page = PlaywrightFactory.getPage();
         this.addToCartButton = page.locator("#add-to-cart-sauce-labs-backpack");
         this.shoppingCartButton = page.locator(".shopping_cart_badge");
         this.finishCheckoutButton = page.locator("#finish");
