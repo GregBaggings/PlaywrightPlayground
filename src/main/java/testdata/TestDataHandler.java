@@ -1,4 +1,4 @@
-package util;
+package testdata;
 
 import com.google.gson.Gson;
 import com.microsoft.playwright.APIResponse;

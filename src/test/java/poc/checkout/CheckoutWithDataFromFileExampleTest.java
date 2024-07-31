@@ -13,28 +13,22 @@ import testdata.JsonArgumentsProvider;
 import java.util.Map;
 
 import static constants.Constants.*;
-import static util.TestDataHandler.prepareTestData;
+import static testdata.TestDataHandler.prepareTestData;
 
 @UsePlaywright
 public class CheckoutWithDataFromFileExampleTest extends BaseTest {
 
     private Map<String, String> testData;
 
-    private LoginPage loginPage;
-    private ProductListPage productListPage;
-    private YourCartPage yourCartPage;
-    private PersonalDetailsPage personalDetailsPage;
-    private FeedbackPage feedbackPage;
+    private final LoginPage loginPage = new LoginPage();
+    private final ProductListPage productListPage = new ProductListPage();
+    private final YourCartPage yourCartPage = new YourCartPage();
+    private final PersonalDetailsPage personalDetailsPage = new PersonalDetailsPage();
+    private final FeedbackPage feedbackPage = new FeedbackPage();
 
     @BeforeEach
     public void setTestData() {
         testData = prepareTestData();
-
-        loginPage = new LoginPage();
-        productListPage = new ProductListPage();
-        yourCartPage = new YourCartPage();
-        personalDetailsPage = new PersonalDetailsPage();
-        feedbackPage = new FeedbackPage();
     }
 
     @DisplayName("Checkout flow with different users")
