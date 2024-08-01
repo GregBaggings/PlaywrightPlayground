@@ -1,7 +1,7 @@
 # Playwright Playground
 
 ## Goal
-To have a unified framework that can cover both UI and API testing at the
+To have a unified framework with Playwright that can cover both UI and API testing at the
 same time without the need to use multiple separate libraries and
 increased complexity.
 
@@ -12,7 +12,7 @@ increased complexity.
 
 ## To Run:
 ```bash
-mvn clean test -Dheadless=true -Dbrowser=CHROME
+mvn clean test -Dheadless=true
 ```
 
 ## To Generate the test report:

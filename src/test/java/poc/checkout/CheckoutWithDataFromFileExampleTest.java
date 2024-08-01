@@ -15,7 +15,6 @@ import util.TestCaseKeys;
 import java.util.Map;
 
 import static constants.Constants.*;
-import static testdata.TestDataHandler.prepareTestData;
 
 @UsePlaywright
 public class CheckoutWithDataFromFileExampleTest extends BaseTest {
@@ -30,7 +29,7 @@ public class CheckoutWithDataFromFileExampleTest extends BaseTest {
 
     @BeforeEach
     public void setTestData() {
-        testData = prepareTestData();
+        testData = testDataHandler.prepareTestData();
     }
 
     @DisplayName("Checkout flow with different users")

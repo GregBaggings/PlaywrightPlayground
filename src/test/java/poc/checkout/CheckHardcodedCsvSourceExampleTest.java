@@ -10,12 +10,9 @@ import pages.*;
 import java.util.Map;
 
 import static constants.Constants.*;
-import static testdata.TestDataHandler.prepareTestData;
 
 @UsePlaywright
 public class CheckHardcodedCsvSourceExampleTest extends BaseTest {
-
-    private Map<String, String> testData;
 
     private final LoginPage loginPage = new LoginPage();
     private final ProductListPage productListPage = new ProductListPage();
@@ -23,9 +20,11 @@ public class CheckHardcodedCsvSourceExampleTest extends BaseTest {
     private final PersonalDetailsPage personalDetailsPage = new PersonalDetailsPage();
     private final FeedbackPage feedbackPage = new FeedbackPage();
 
+    private Map<String, String> testData;
+
     @BeforeEach
     public void setTestData() {
-        testData = prepareTestData();
+        testData = testDataHandler.prepareTestData();
     }
 
     @DisplayName("Checkout flow with different users")

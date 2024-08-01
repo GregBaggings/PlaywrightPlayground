@@ -7,6 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import testdata.TestDataHandler;
 
 import java.io.ByteArrayInputStream;
 import java.nio.file.Paths;
@@ -15,6 +16,7 @@ import static util.ExecutionDateHandler.getExecutionDate;
 
 public class BaseTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseTest.class);
+    protected final TestDataHandler testDataHandler = new TestDataHandler();
     protected Page page;
 
     @BeforeEach
