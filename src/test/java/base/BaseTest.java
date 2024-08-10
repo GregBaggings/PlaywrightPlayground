@@ -7,6 +7,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import testdata.TestData;
 import testdata.TestDataHandler;
 
 import java.io.ByteArrayInputStream;
@@ -16,12 +17,18 @@ import static util.ExecutionDateHandler.getExecutionDate;
 
 public class BaseTest {
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseTest.class);
-    protected final TestDataHandler testDataHandler = new TestDataHandler();
+    protected TestData testData = new TestData();
     protected Page page;
 
     @BeforeEach
+    public void prepareTestData() {
+        new TestDataHandler().prepareTestData(testData);
+        LOGGER.info("Prepared data before the actual test: {}", testData);
+    }
+
+    @BeforeEach
     public void setupPlaywright() {
-         page = PlaywrightFactory.getPage();
+        page = PlaywrightFactory.getPage();
     }
 
     @AfterEach

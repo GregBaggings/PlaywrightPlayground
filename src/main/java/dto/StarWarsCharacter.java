@@ -1,9 +1,9 @@
-
 package dto;
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.List;
 
 public class StarWarsCharacter {
 
@@ -190,70 +190,70 @@ public class StarWarsCharacter {
         sb.append(StarWarsCharacter.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("name");
         sb.append('=');
-        sb.append(((this.name == null)?"<null>":this.name));
+        sb.append(((this.name == null) ? "<null>" : this.name));
         sb.append(',');
         sb.append("height");
         sb.append('=');
-        sb.append(((this.height == null)?"<null>":this.height));
+        sb.append(((this.height == null) ? "<null>" : this.height));
         sb.append(',');
         sb.append("mass");
         sb.append('=');
-        sb.append(((this.mass == null)?"<null>":this.mass));
+        sb.append(((this.mass == null) ? "<null>" : this.mass));
         sb.append(',');
         sb.append("hairColor");
         sb.append('=');
-        sb.append(((this.hairColor == null)?"<null>":this.hairColor));
+        sb.append(((this.hairColor == null) ? "<null>" : this.hairColor));
         sb.append(',');
         sb.append("skinColor");
         sb.append('=');
-        sb.append(((this.skinColor == null)?"<null>":this.skinColor));
+        sb.append(((this.skinColor == null) ? "<null>" : this.skinColor));
         sb.append(',');
         sb.append("eyeColor");
         sb.append('=');
-        sb.append(((this.eyeColor == null)?"<null>":this.eyeColor));
+        sb.append(((this.eyeColor == null) ? "<null>" : this.eyeColor));
         sb.append(',');
         sb.append("birthYear");
         sb.append('=');
-        sb.append(((this.birthYear == null)?"<null>":this.birthYear));
+        sb.append(((this.birthYear == null) ? "<null>" : this.birthYear));
         sb.append(',');
         sb.append("gender");
         sb.append('=');
-        sb.append(((this.gender == null)?"<null>":this.gender));
+        sb.append(((this.gender == null) ? "<null>" : this.gender));
         sb.append(',');
         sb.append("homeworld");
         sb.append('=');
-        sb.append(((this.homeworld == null)?"<null>":this.homeworld));
+        sb.append(((this.homeworld == null) ? "<null>" : this.homeworld));
         sb.append(',');
         sb.append("films");
         sb.append('=');
-        sb.append(((this.films == null)?"<null>":this.films));
+        sb.append(((this.films == null) ? "<null>" : this.films));
         sb.append(',');
         sb.append("species");
         sb.append('=');
-        sb.append(((this.species == null)?"<null>":this.species));
+        sb.append(((this.species == null) ? "<null>" : this.species));
         sb.append(',');
         sb.append("vehicles");
         sb.append('=');
-        sb.append(((this.vehicles == null)?"<null>":this.vehicles));
+        sb.append(((this.vehicles == null) ? "<null>" : this.vehicles));
         sb.append(',');
         sb.append("starships");
         sb.append('=');
-        sb.append(((this.starships == null)?"<null>":this.starships));
+        sb.append(((this.starships == null) ? "<null>" : this.starships));
         sb.append(',');
         sb.append("created");
         sb.append('=');
-        sb.append(((this.created == null)?"<null>":this.created));
+        sb.append(((this.created == null) ? "<null>" : this.created));
         sb.append(',');
         sb.append("edited");
         sb.append('=');
-        sb.append(((this.edited == null)?"<null>":this.edited));
+        sb.append(((this.edited == null) ? "<null>" : this.edited));
         sb.append(',');
         sb.append("url");
         sb.append('=');
-        sb.append(((this.url == null)?"<null>":this.url));
+        sb.append(((this.url == null) ? "<null>" : this.url));
         sb.append(',');
-        if (sb.charAt((sb.length()- 1)) == ',') {
-            sb.setCharAt((sb.length()- 1), ']');
+        if (sb.charAt((sb.length() - 1)) == ',') {
+            sb.setCharAt((sb.length() - 1), ']');
         } else {
             sb.append(']');
         }

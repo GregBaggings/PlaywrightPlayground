@@ -8,10 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rest.StarWarsService;
 
-import java.util.Map;
 import java.util.Random;
-
-import static constants.Constants.*;
 
 public class TestDataHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(TestDataHandler.class);
@@ -21,7 +18,7 @@ public class TestDataHandler {
     private int pagination;
 
     @Step("Gather the test data through API calls")
-    public Map<String, String> prepareTestData() {
+    public void prepareTestData(TestData testData) {
         // 82 is the number of the characters currently
         int randomIdOfCharacter = RANDOM.nextInt(1, 82);
 
@@ -39,10 +36,9 @@ public class TestDataHandler {
         CharacterNameForCheckout result = getCharacterName(name);
         LOGGER.info("{} {}", result.firstName(), result.lastName());
 
-        return Map.of(
-                FIRST_NAME, result.firstName(),
-                LAST_NAME, result.lastName(),
-                PLANET, planetDto.getName());
+        testData.setFirstName(result.firstName);
+        testData.setLastName(result.lastName);
+        testData.setPlanet(planetDto.getName());
     }
 
     private static CharacterNameForCheckout getCharacterName(String name) {
